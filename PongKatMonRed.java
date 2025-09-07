@@ -26,11 +26,11 @@ class PongKatMonRed {
     // 초기화 메서드 추가
     public static void initializeList() {
         list.clear(); // 기존 리스트를 비우고
-        list.add(new PongKatMonRed("퐁북왕", "파도타기", 750, 2250, 1250, false));
-        list.add(new PongKatMonRed("괴력퐁", "돼지 두루치기", 800, 2300, 1300, false));
-        list.add(new PongKatMonRed("후딘퐁", "사이코키네시스", 850, 2350, 1350, false));
-        list.add(new PongKatMonRed("퐁리곤", "트라이어택", 900, 2400, 1400, false));
-        list.add(new PongKatMonRed("퐁구리", "돌머리박치기", 950, 2450, 1450, false));
-        list.add(new PongKatMonRed("잠만퐁", "코골이", 1500, 4000, 3000, false));
+        list.add(new PongKatMonRed("퐁북왕", "파도타기", 750, 3250, 3250, false));
+        list.add(new PongKatMonRed("괴력퐁", "돼지 두루치기", 800, 3300, 3300, false));
+        list.add(new PongKatMonRed("후딘퐁", "사이코키네시스", 850, 3350, 3350, false));
+        list.add(new PongKatMonRed("퐁리곤", "트라이어택", 900, 3400, 3400, false));
+        list.add(new PongKatMonRed("퐁구리", "돌머리박치기", 950, 3450, 3450, false));
+        list.add(new PongKatMonRed("잠만퐁", "코골이", 1500, 5000, 5000, false));
     }
 }

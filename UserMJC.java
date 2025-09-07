@@ -51,7 +51,7 @@ class UserMJC {
     static {
         list.add(new UserMJC("pongpong", "퐁퐁이", "123456abc", true, 0, 0, 1, 0, ""));
         list.add(new UserMJC("winwin909", "한화팬", "2a4a3a5404", false, 0, 0, 12, 1, ""));
-        list.add(new UserMJC("bowToMe2424", "강호통", "tlqkfToRl111", false, 1000000, 100, 6, 2, "반복해요 반복"));
-        list.add(new UserMJC("bowToMe2323", "최비만", "tlqkfToRl111", false, 1000000, 100, 2, 2, "쌀먹해요 쌀먹"));
+        list.add(new UserMJC("bowWow2424", "강호통", "1234", false, 1000000, 100, 6, 2, "반복해요 반복"));
+        list.add(new UserMJC("bowser2323", "최비만", "5678", false, 1000000, 100, 2, 2, "쌀먹해요 쌀먹"));
     }
 }

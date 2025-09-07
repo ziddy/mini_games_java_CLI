@@ -15,8 +15,8 @@ class RussianRouletteMain implements GameStage {
 	private int cylinderPos; // 현재 실린더 위치 (0~5)
 	private boolean playerTurn;
 
-	private int finishCoin = 0;
-	private int finishWin = 0;
+	private final int FINISH_COIN = 50000;
+	private final int FINISH_WIN = 10;
 
 	public RussianRouletteMain() {
 		reset();
@@ -28,8 +28,6 @@ class RussianRouletteMain implements GameStage {
 		banned = false;
 		bulletPos = rand.nextInt(6); // 총알 위치 랜덤
 		cylinderPos = 0;             // 시작 위치 0
-		finishCoin = 0;
-		finishWin = 0;
 	}
 
 	@Override
@@ -142,10 +140,10 @@ class RussianRouletteMain implements GameStage {
 
 	/** 컴퓨터 사망 */
 	private void comDied() {
-		finishCoin = 50000;
-		finishWin = 10;
+		ToAccount.currentUser.victory += FINISH_WIN;
+		ToAccount.currentUser.money += FINISH_COIN;
 		System.out.println("\n컴퓨터가 사망하였습니다. 보상 획득!");
-		System.out.printf("￦ %,d 원, 승 %d 획득\n", finishCoin, finishWin);
+		System.out.printf("￦ %,d 원, 승 %d 획득\n", FINISH_COIN, FINISH_WIN);
 
 		while (true) {
 			System.out.print("\n다음 단계로 넘어가고 싶으면 '다음'이라 입력해주세요: ");
