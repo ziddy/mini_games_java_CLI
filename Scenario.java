@@ -17,23 +17,6 @@ class Scenario {
     public static final int STATE_FIFTH = 5;
     public static final int STATE_SIXTH = 6;
 
-    // 필드 선언 (객체 참조)
-    private PongKatMon playerMon;
-    private PongKatMonRed redMon;
-
-    // 초기화 메소드
-    public void initMonsters() {
-        if (ToAccount.currentUser.playerPongKatMon.isEmpty()) {
-            return; // null 방지
-        }
-        if (PongKatMonRed.redPongKatMon.isEmpty()) {
-            return;
-        }
-
-        playerMon = ToAccount.currentUser.playerPongKatMon.get(0);
-        redMon = PongKatMonRed.redPongKatMon.get(0);
-    }
-
     void getPKWarScenario(int mode, int state, int redState) {
         switch (mode) {
             case MODE_SELECT -> showSelectScenario(state);
@@ -62,6 +45,8 @@ class Scenario {
     }
 
     private void playerActionScenario(int state) {
+        PongKatMon playerMon = ToAccount.currentUser.playerPongKatMon.get(0);
+        PongKatMonRed redMon = PongKatMonRed.redPongKatMon.get(0);
         switch (state) {
             case STATE_FIRST -> System.out.printf("%s : 가라!! %s!! \n%s : 퐁퐁퐁!!!! \n\n",
                     ToAccount.currentUser.NickName,
@@ -91,6 +76,8 @@ class Scenario {
     }
 
     private void redActionScenario(int redState) {
+        PongKatMon playerMon = ToAccount.currentUser.playerPongKatMon.get(0);
+        PongKatMonRed redMon = PongKatMonRed.redPongKatMon.get(0);
         switch (redState) {
             case STATE_FIRST -> System.out.printf("레드 : 가라!! %s!! \n%s : 퐁퐁퐁!!!! \n",
                     redMon.name,

@@ -62,7 +62,6 @@ class PongKatMonWar implements GameStage {
 
     private void selectMonster() {
         int choice = -1;
-
         while (true) {
             System.out.println("─ 어떤 퐁캣몬을 꺼내겠습니까? ─\n");
             showPlayerMonsters();
@@ -84,18 +83,16 @@ class PongKatMonWar implements GameStage {
 
         PongKatMon selected = ToAccount.currentUser.playerMonsters.get(choice);
         ToAccount.currentUser.playerPongKatMon.clear();
+        // 플레이어 퐁캣몬 선발
         ToAccount.currentUser.playerPongKatMon.add(selected);
-
         ToAccount.currentUser.playerMonsters.remove(choice);
 
-        if (!PongKatMonRed.list.isEmpty()) {
-            int redChoice = (int) (Math.random() * PongKatMonRed.list.size());
-            PongKatMonRed.redPongKatMon.clear();
-            PongKatMonRed.redPongKatMon.add(PongKatMonRed.list.get(redChoice));
-            PongKatMonRed.list.remove(redChoice);
-        }
-
-        msg.initMonsters();
+        int redChoice = (int) (Math.random() * PongKatMonRed.list.size());
+        PongKatMonRed.redPongKatMon.clear();
+        // 레드 퐁캣몬 선발
+        PongKatMonRed.redPongKatMon.add(PongKatMonRed.list.get(redChoice));
+        // 선발한 자리 제거
+        PongKatMonRed.list.remove(redChoice);
 
         scenarioMode = 2;
         playerState = 1;
@@ -203,25 +200,19 @@ class PongKatMonWar implements GameStage {
     }
 
     private void checkBattleState() {
-        if (ToAccount.currentUser.playerPongKatMon.isEmpty() || PongKatMonRed.redPongKatMon.isEmpty()) {
-            return;
-        }
-
         PongKatMon playerMon = ToAccount.currentUser.playerPongKatMon.get(0);
         PongKatMonRed enemyMon = PongKatMonRed.redPongKatMon.get(0);
 
+        // 레드 퐁캣몬이 사망?
         if (enemyMon.hp <= 0) {
             msg.defeatedName = enemyMon.name;
             // 승리한 플레이어 몬스터를 먼저 목록에 복귀
             if (playerMon.hp > 0) {
                 ToAccount.currentUser.playerMonsters.add(playerMon);
             }
-
+            //레드 퐁캣몬들이 아직도 살아있다면?
             if (!PongKatMonRed.list.isEmpty()) {
-                int idx = (int) (Math.random() * PongKatMonRed.list.size());
-                PongKatMonRed.redPongKatMon.clear();
-                PongKatMonRed.redPongKatMon.add(PongKatMonRed.list.get(idx));
-                PongKatMonRed.list.remove(idx);
+                // 시나리오 내용 : 레드의 퐁캣몬을 처치했다!! 나 잠깐만 1분 텀...
                 scenarioMode = Scenario.MODE_SELECT;
                 playerState = Scenario.STATE_SECOND;
             } else {
@@ -241,12 +232,19 @@ class PongKatMonWar implements GameStage {
 
                 finished = true;
             }
+            // 플레이어 퐁캣몬이 사망?
         } else if (playerMon.hp <= 0) {
             msg.killedBy = enemyMon.skillName;
-
+            // 레드 퐁캣몬 복귀
+            if (enemyMon.hp > 0) {
+                PongKatMonRed.list.add(enemyMon);
+            }
+            // 아직 플레이어 몬스터들이 살아있다면?
             if (!ToAccount.currentUser.playerMonsters.isEmpty()) {
+                // 시나리오 : 내 퐁캣몬이 필살기를 맞고 죽었다 ㅠㅠ
                 scenarioMode = Scenario.MODE_SELECT;
                 playerState = Scenario.STATE_THIRD;
+                // 플레이어 몬스터들이 다 죽으면 탈락
             } else {
                 scenarioMode = Scenario.MODE_RESULT;
                 playerState = Scenario.STATE_SECOND;

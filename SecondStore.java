@@ -82,6 +82,7 @@ class SecondStore implements GameStage {
                 narrator = "퐁캣몬 없이 다음으로 넘어갈 수 없습니다. '포기'를 입력하세요.";
                 return;
             }
+            PongKatMonRed.initializeList();
             finished = true;
         } else if (playerInput.equals("포기")) {
             narrator = "탈락입니다.";
