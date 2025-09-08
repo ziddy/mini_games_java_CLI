@@ -65,70 +65,70 @@ q 입력 - System.exit(0);
 q 입력 > 메인 화면 이동 (MainApp.java)
 
 ### RockScissorPaper
-1 입력 > 가위
-2 입력 > 바위
-3 입력 > 보
+1 입력 > 가위 <br>
+2 입력 > 바위<br>
+3 입력 > 보<br>
 상대 봇의 가위바위보에 따라 승리 횟수, 금액 증가, 10번 진행하고
-요트다이스로 넘어감 (YachtDice.java)
+요트다이스로 넘어감 (YachtDice.java)<br>
 넘어갈 때 'Start' 입력해야함
 
 ### YachtDice
 1단계
-dice 입력 > 게임 시작
-quit 입력 > system.exit(0);
+dice 입력 > 게임 시작<br>
+quit 입력 > system.exit(0);<br>
 
 2단계
-1. 처음에는 enter 입력 - enter는 주사위 5개를 전부 돌린다.
+1. 처음에는 enter 입력 - enter는 주사위 5개를 전부 돌린다.<br>
 2. 주사위 5개 중 고정하고 싶은 주사위가 있으면
-숫자로 고정할 수 있다.
+숫자로 고정할 수 있다.<br>
 예를 들면 첫번째, 네번째를 돌리고 싶으면
-'1 4'를 입력해야 한다. 꼭 스페이스 입력하면서 구분시켜놔야 한다.
-만약에 고정할게 없으면 enter 입력
-게임이 끝나면 자동으로 상점(FirstStore.java)으로 넘어간다.
+'1 4'를 입력해야 한다. 꼭 스페이스 입력하면서 구분시켜놔야 한다.<br>
+만약에 고정할게 없으면 enter 입력<br>
+게임이 끝나면 자동으로 상점(FirstStore.java)으로 넘어간다.<br>
 
 ### FirstStore
-1 입력 > 활 구매 후 양궁게임 (ArcheryGame.java) 이동
-2 입력 > 리볼버 구매 후 러시안룰렛 (RussianRouletteMain.java) 이동
-포기 입력 > 메인 화면 (MainApp.java) 이동
+1 입력 > 활 구매 후 양궁게임 (ArcheryGame.java) 이동<br>
+2 입력 > 리볼버 구매 후 러시안룰렛 (RussianRouletteMain.java) 이동<br>
+포기 입력 > 메인 화면 (MainApp.java) 이동<br>
 
 ### ArcheryGame
-1 입력 > 왼쪽으로 활 쏨
-2 입력 > 가운데쪽으로 활 쏨
-3 입력 > 오른쪽으로 활 쏨
-10번 이상 하고 '다음' 누르면 두번째 상점 (SecondStore.java) 이동
+1 입력 > 왼쪽으로 활 쏨<br>
+2 입력 > 가운데쪽으로 활 쏨<br>
+3 입력 > 오른쪽으로 활 쏨<br>
+10번 이상 하고 '다음' 누르면 두번째 상점 (SecondStore.java) 이동<br>
 
 ### RussianRouletteMain
-1단계 (동전을 던져서 선공/후공 결정)
-앞 입력 > 선공
-뒤 입력 > 후공
+1단계 (동전을 던져서 선공/후공 결정)<br>
+앞 입력 > 선공<br>
+뒤 입력 > 후공<br>
 
-2단계 (방아쇠 당기기)
-shot 입력 > 계속 진행
-quit 입력 > 포기하고 메인 화면으로
+2단계 (방아쇠 당기기)<br>
+shot 입력 > 계속 진행<br>
+quit 입력 > 포기하고 메인 화면으로<br>
 
-3단계
-진행 중 플레이어 사망 > 메인 화면으로 이동
-진행 중 컴퓨터 사망 > 플레이어 승, '다음' 입력 시 퐁캣몬 상점 (SecondStore.java)로 이동
+3단계<br>
+진행 중 플레이어 사망 > 메인 화면으로 이동<br>
+진행 중 컴퓨터 사망 > 플레이어 승, '다음' 입력 시 퐁캣몬 상점 (SecondStore.java)로 이동<br>
 
 ### SecondStore
-1~15 입력 > 퐁캣몬 구매
-포기 입력 > 메인 화면 (MainApp.java) 이동
-시작 입력 > 퐁캣몬 대전 (PongKatMonWar.java) 이동
+1~15 입력 > 퐁캣몬 구매<br>
+포기 입력 > 메인 화면 (MainApp.java) 이동<br>
+시작 입력 > 퐁캣몬 대전 (PongKatMonWar.java) 이동<br>
 
 ### PongKatMonWar
-1단계
-1~6 입력 > 퐁캣몬 선발
+1단계<br>
+1~6 입력 > 퐁캣몬 선발<br>
 
-2단계
-1 입력 > 필살기 시전
-2 입력 > 회복
-3 입력 > 피하기
+2단계<br>
+1 입력 > 필살기 시전<br>
+2 입력 > 회복<br>
+3 입력 > 피하기<br>
 
-대전 끝나면 다시 1단계로 돌아감
-퐁캣몬이 없으면 탈락 후 자동으로 메인 화면 (MainApp.java) 이동
+대전 끝나면 다시 1단계로 돌아감<br>
+퐁캣몬이 없으면 탈락 후 자동으로 메인 화면 (MainApp.java) 이동<br>
 
-3단계
-승리 후 소감 입력 후 메인 화면 (MainApp.java) 이동
+3단계<br>
+승리 후 소감 입력 후 메인 화면 (MainApp.java) 이동<br>
 
 ## 🚀 향후 개선 계획
 
