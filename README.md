@@ -54,15 +54,15 @@ java classes.MainApp
 ## 😎 실행 예시
 
 ### MainApp
-1 입력 - 게임 소개 펼쳐친다.
-2 입력 - 명예의 전당 펼쳐진다.
-3 입력 - 게임 시작 화면으로 넘어간다. (GameStart.java)
-q 입력 - System.exit(0);
+1 입력 - 게임 소개 펼쳐친다. <br>
+2 입력 - 명예의 전당 펼쳐진다. <br>
+3 입력 - 게임 시작 화면으로 넘어간다. (GameStart.java) <br>
+q 입력 - System.exit(0); <br>
 
 ### GameStart
-1 입력 > 로그인 > 아이디/비밀번호 입력 > 가위바위보 (RockScissorPaper.java)
-2 입력 > 회원가입 > 아이디/비밀번호/닉네임/성향 입력
-q 입력 > 메인 화면 이동 (MainApp.java)
+1 입력 > 로그인 > 아이디/비밀번호 입력 > 가위바위보 (RockScissorPaper.java) <br>
+2 입력 > 회원가입 > 아이디/비밀번호/닉네임/성향 입력 <br>
+q 입력 > 메인 화면 이동 (MainApp.java) <br>
 
 ### RockScissorPaper
 1 입력 > 가위 <br>
@@ -73,11 +73,11 @@ q 입력 > 메인 화면 이동 (MainApp.java)
 넘어갈 때 'Start' 입력해야함
 
 ### YachtDice
-1단계
+1단계 <br>
 dice 입력 > 게임 시작<br>
 quit 입력 > system.exit(0);<br>
 
-2단계
+2단계<br>
 1. 처음에는 enter 입력 - enter는 주사위 5개를 전부 돌린다.<br>
 2. 주사위 5개 중 고정하고 싶은 주사위가 있으면
 숫자로 고정할 수 있다.<br>
