@@ -17,6 +17,10 @@
 1. ID : pongpong  PW : 123456abc (처음 도전하는 사용자)
 2. ID : winwin909 PW : 2a4a3a5404 (여러번 도전한 사용자)
 
+### ★ 회원가입
+회원가입 UI 및 기능은 구현했으나, DBMS 연동은 생략하여 실제 데이터는 영구 저장되지 않습니다. 
+(학습 목적의 Mock-up 구현)
+
 명예의 전당: 최종 스테이지에서 승리한 챔피언의 기록을 HallOfFame 클래스에 저장하고 메인 메뉴에서 확인할 수 있습니다. 게임을 모두 클리어하시면 명예의 전당에 새롭게 추가된 회원 정보를 보시게 됩니다.
 
 ## 💻 프로젝트 기술 스택 및 핵심 개념
@@ -46,6 +50,85 @@ javac classes/*.java
 Bash
 
 java classes.MainApp
+
+## 😎 실행 예시
+
+### MainApp
+1 입력 - 게임 소개 펼쳐친다. <br>
+2 입력 - 명예의 전당 펼쳐진다. <br>
+3 입력 - 게임 시작 화면으로 넘어간다. (GameStart.java) <br>
+q 입력 - System.exit(0); <br>
+
+### GameStart
+1 입력 > 로그인 > 아이디/비밀번호 입력 > 가위바위보 (RockScissorPaper.java) <br>
+2 입력 > 회원가입 > 아이디/비밀번호/닉네임/성향 입력 <br>
+q 입력 > 메인 화면 이동 (MainApp.java) <br>
+
+### RockScissorPaper
+1 입력 > 가위 <br>
+2 입력 > 바위<br>
+3 입력 > 보<br>
+상대 봇의 가위바위보에 따라 승리 횟수, 금액 증가, 10번 진행하고
+요트다이스로 넘어감 (YachtDice.java)<br>
+넘어갈 때 'Start' 입력해야함
+
+### YachtDice
+1단계 <br>
+dice 입력 > 게임 시작<br>
+quit 입력 > system.exit(0);<br>
+
+2단계<br>
+1. 처음에는 enter 입력 - enter는 주사위 5개를 전부 돌린다.<br>
+2. 주사위 5개 중 고정하고 싶은 주사위가 있으면
+숫자로 고정할 수 있다.<br>
+예를 들면 첫번째, 네번째를 돌리고 싶으면
+'1 4'를 입력해야 한다. 꼭 스페이스 입력하면서 구분시켜놔야 한다.<br>
+만약에 고정할게 없으면 enter 입력<br>
+게임이 끝나면 자동으로 상점(FirstStore.java)으로 넘어간다.<br>
+
+### FirstStore
+1 입력 > 활 구매 후 양궁게임 (ArcheryGame.java) 이동<br>
+2 입력 > 리볼버 구매 후 러시안룰렛 (RussianRouletteMain.java) 이동<br>
+포기 입력 > 메인 화면 (MainApp.java) 이동<br>
+
+### ArcheryGame
+1 입력 > 왼쪽으로 활 쏨<br>
+2 입력 > 가운데쪽으로 활 쏨<br>
+3 입력 > 오른쪽으로 활 쏨<br>
+10번 이상 하고 '다음' 누르면 두번째 상점 (SecondStore.java) 이동<br>
+
+### RussianRouletteMain
+1단계 (동전을 던져서 선공/후공 결정)<br>
+앞 입력 > 선공<br>
+뒤 입력 > 후공<br>
+
+2단계 (방아쇠 당기기)<br>
+shot 입력 > 계속 진행<br>
+quit 입력 > 포기하고 메인 화면으로<br>
+
+3단계<br>
+진행 중 플레이어 사망 > 메인 화면으로 이동<br>
+진행 중 컴퓨터 사망 > 플레이어 승, '다음' 입력 시 퐁캣몬 상점 (SecondStore.java)로 이동<br>
+
+### SecondStore
+1~15 입력 > 퐁캣몬 구매<br>
+포기 입력 > 메인 화면 (MainApp.java) 이동<br>
+시작 입력 > 퐁캣몬 대전 (PongKatMonWar.java) 이동<br>
+
+### PongKatMonWar
+1단계<br>
+1~6 입력 > 퐁캣몬 선발<br>
+
+2단계<br>
+1 입력 > 필살기 시전<br>
+2 입력 > 회복<br>
+3 입력 > 피하기<br>
+
+대전 끝나면 다시 1단계로 돌아감<br>
+퐁캣몬이 없으면 탈락 후 자동으로 메인 화면 (MainApp.java) 이동<br>
+
+3단계<br>
+승리 후 소감 입력 후 메인 화면 (MainApp.java) 이동<br>
 
 ## 🚀 향후 개선 계획
 
